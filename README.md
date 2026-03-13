@@ -17,6 +17,20 @@ AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin etmek için
 
 ---
 
+## 📸 Ekran Görüntüleri
+
+Buraya projeyi en iyi anlatan görselleri (geliştirme aşamasında aldığınız screenshot'ları) ekleyebilirsiniz.
+
+**Dashboard Arayüzü**
+> `![Dashboard Arayüzü](dashboard_screenshot.png)`
+*(Arayüzün genel görünümünü ve kullanıcı dostu yapısını gösteren bir görsel)*
+
+**Model Sonuçları ve Grafikler**
+> `![Model Sonuç Grafiği](confusion_matrix.png)`
+*(Modelin sınıflandırma performansını gösteren Hata Matrisi)*
+
+---
+
 ## 🎯 Projeye Genel Bakış
 Bu proje, kimyasal parametreleri kullanarak içilebilir su kaynaklarını belirleme zorluğunu çözmeyi amaçlamaktadır. Karmaşık veri modelleri ile son kullanıcı erişilebilirliği arasındaki boşluğu doldurarak, kullanıcıların makine öğrenmesi modeliyle doğrudan etkileşime girebileceği görsel bir platform sunar.
 
@@ -32,11 +46,19 @@ Bu proje, kimyasal parametreleri kullanarak içilebilir su kaynaklarını belirl
 - **Görselleştirme**: Seaborn, Matplotlib, Recharts, Plotly.
 - **Frontend**: React 18, Vite, Tailwind CSS, Framer Motion.
 
-## 📊 Makine Öğrenmesi İş Akışı
+## 📊 Makine Öğrenmesi Modeli ve Sonuçlar
 1.  **Keşifsel Veri Analizi (EDA)**: 3.276 su örneği genelindeki kalıplar ve kayıp veri trendleri belirlendi.
 2.  **Ön İşleme**: Eksik değerler için istatistiksel ortalama ataması ve özellik normalizasyonu için Min-Max ölçeklendirme uygulandı.
-3.  **Model Optimizasyonu**: Karar Ağacı ve Random Forest mimarileri eğitildi; `RepeatedStratifiedKFold` ile çapraz doğrulama gerçekleştirildi.
-4.  **Performans Sonucu**: En iyi performans gösteren model, test veri kümesinde yaklaşık **%82 doğruluk** oranına ulaştı.
+3.  **Model Seçimi (Neden Random Forest?)**: Doğrusal olmayan karmaşık ilişkileri yakalayabilmesi, aşırı öğrenmeye (overfitting) karşı direnci ve özellik önem sıralamasını (feature importance) net bir şekilde verebilmesi nedeniyle ana model olarak **Random Forest** tercih edilmiştir. Diğer algoritmalarla kıyaslandığında bu veri setinde en tutarlı ve sağlam sonuçları vermiştir.
+4.  **Model Optimizasyonu**: `RepeatedStratifiedKFold` kullanılarak çapraz doğrulama yapılmış ve `RandomizedSearchCV` ile en iyi hiperparametreler elde edilmiştir.
+5.  **Performans Sonuçları**: En iyi performans gösteren Random Forest modeli test kümesinde şu temel metrikleri sağlamıştır:
+    - **Accuracy (Doğruluk)**: ~%82
+    - **Precision (Kesinlik)**: ~%85 *(İçilebilir olarak tahmin edilen suların gerçekten içilebilir olma oranı)*
+    - **Recall (Duyarlılık)**: ~%63 *(Gerçekte içilebilir olan suların model tarafından doğru bulunma oranı)*
+    - **Karmaşıklık Matrisi (Confusion Matrix)**: Modelin öne çıkan özelliği, içilemez (potability=0) sınıfını çok yüksek bir isabetle tahmin etmesidir. Bu durum, içilemez bir suyun yanlışlıkla içilebilir olarak işaretlenmesini önleyerek halk sağlığı risklerini minimize eder.
+
+> **Not:** Aşağıda Random Forest modeline ait Karmaşıklık Matrisi (Confusion Matrix) sonuçlarını görebilirsiniz:
+> `![Confusion Matrix Görseli](confusion_matrix.png)`
 
 ## 🖥️ Panel Genel Bakış
 Kontrol paneli, yüksek taranabilirlik ve profesyonel sunum için tasarlanmıştır:
@@ -47,10 +69,16 @@ Kontrol paneli, yüksek taranabilirlik ve profesyonel sunum için tasarlanmışt
 ```text
 su_Kalitesi/
 ├── dashboard/               # React Frontend (Vite + Tailwind)
-│   ├── src/                 # Kaynak Kodlar ve UI Bileşenleri
-│   └── package.json         # Frontend bağımlılıkları
-├── dünya_su_kalitesi.py      # ML Boru Hattı ve Değerlendirme
-├── water_potability.csv     # Ham Veri Seti
+│   ├── src/                 # Frontend Kaynak Kodları
+│   │   ├── assets/          # Statik medya, görseller ve ikonlar
+│   │   ├── App.jsx          # Ana React bileşeni ve arayüz yapısı
+│   │   ├── App.css          # Uygulama bazlı genel stiller
+│   │   ├── main.jsx         # React DOM giriş noktası
+│   │   └── index.css        # Tailwind direktifleri ve global CSS
+│   └── package.json         # Frontend bağımlılıkları ve yapılandırmalar
+├── dünya_su_kalitesi_tahmini.py # ML Kodları (Veri İşleme, Model Eğitimi, Analiz)
+├── Potability_Pie_Chart.html# Model sonuçlarına ait etkileşimli grafik çıktısı
+├── water_potability.csv     # Model İçin Kullanılan Ham Veri Seti
 └── README.md                # Proje Dökümantasyonu
 ```
 
