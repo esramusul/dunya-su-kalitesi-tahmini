@@ -118,8 +118,3 @@ Samsun Üniversitesi
 - 📧 [musulesra25@gmail.com](mailto:musulesra25@gmail.com)
 - 💼 [LinkedIn Profilim](https://www.linkedin.com/in/esra-musul-970789294/)
 
----
-
-### 🚀 Gelecek Planları
-Projeyi daha da ileri taşımak adına ilerleyen süreçte *XGBoost/LightGBM* gibi farklı algoritmalarla model performansını iyileştirmeyi ve kurduğum bu ML hattını bir **FastAPI / Flask** backend'i ile dışa açarak (Deployment) tam zamanlı API desteği sağlamayı hedefliyorum.
-
