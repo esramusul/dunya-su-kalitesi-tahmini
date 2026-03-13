@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ### 🚀 Proje Özeti
-AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin etmek için tasarlanmış kapsamlı bir veri bilimi ve web mühendisliği projesidir. Bu uçtan uca çözüm, veri analizi için güçlü bir **Python tabanlı ML boru hattı** ve gerçek zamanlı tahminler için **modern bir React paneli** içerir. Proje, gelişmiş tahminleme modellemesini etkileşimli bir arayüz ile birleştirerek gerçek dünya veri zorluklarını çözmeye yönelik tam yığınlı (full-stack) bir yaklaşım sergiler.
+AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin eden tam yığın (full-stack) bir veri bilimi projesidir. Veri analizi için Python tabanlı bir modelleme mimarisi kurarken, sonuçları ve tahminleri son kullanıcıyla buluşturmak için React tabanlı interaktif bir kontrol paneli (dashboard) sunar.
 
 ### 🛠️ Sergilenen Yetkinlikler
 - **Makine Öğrenmesi Mühendisliği**: Random Forest, Decision Tree, Hiperparametre Optimizasyonu.
@@ -19,7 +19,7 @@ AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin etmek için
 
 ## 📸 Ekran Görüntüleri
 
-Buraya projeyi en iyi anlatan görselleri (geliştirme aşamasında aldığınız screenshot'ları) ekleyebilirsiniz.
+Aşağıda projenin hem kullanıcı arayüzünü hem de model performansını gösteren örnek görselleri inceleyebilirsiniz:
 
 **Dashboard Arayüzü**
 ![Dashboard Arayüzü](dashboard_screenshot.png)
@@ -68,19 +68,18 @@ Kontrol paneli, yüksek taranabilirlik ve profesyonel sunum için tasarlanmışt
 
 ## 📂 Proje Yapısı
 ```text
-su_Kalitesi/
-├── dashboard/               # React Frontend (Vite + Tailwind)
-│   ├── src/                 # Frontend Kaynak Kodları
-│   │   ├── assets/          # Statik medya, görseller ve ikonlar
-│   │   ├── App.jsx          # Ana React bileşeni ve arayüz yapısı
-│   │   ├── App.css          # Uygulama bazlı genel stiller
-│   │   ├── main.jsx         # React DOM giriş noktası
-│   │   └── index.css        # Tailwind direktifleri ve global CSS
-│   └── package.json         # Frontend bağımlılıkları ve yapılandırmalar
+├── dashboard/                   # React Frontend (Vite + Tailwind)
+│   ├── src/                     # Frontend Kaynak Kodları
+│   │   ├── assets/              # Statik medya, görseller ve ikonlar
+│   │   ├── App.jsx              # Ana React bileşeni ve arayüz yapısı
+│   │   ├── App.css              # Uygulama bazlı genel stiller
+│   │   ├── main.jsx             # React DOM giriş noktası
+│   │   └── index.css            # Tailwind direktifleri ve global CSS
+│   └── package.json             # Frontend bağımlılıkları ve yapılandırmalar
 ├── dünya_su_kalitesi_tahmini.py # ML Kodları (Veri İşleme, Model Eğitimi, Analiz)
-├── Potability_Pie_Chart.html# Model sonuçlarına ait etkileşimli grafik çıktısı
-├── water_potability.csv     # Model İçin Kullanılan Ham Veri Seti
-└── README.md                # Proje Dökümantasyonu
+├── Potability_Pie_Chart.html    # Model sonuçlarına ait etkileşimli grafik çıktısı
+├── water_potability.csv         # Model İçin Kullanılan Ham Veri Seti
+└── README.md                    # Proje Dökümantasyonu
 ```
 
 ## ⚙️ Kurulum
@@ -89,15 +88,18 @@ su_Kalitesi/
 - Node.js ve npm
 
 ### Kurulum Adımları
+
+**ML Tarafı:**
 ```bash
-# Depoyu klonlayın ve ML bağımlılıklarını yükleyin
 pip install pandas numpy scikit-learn seaborn plotly missingno
-
-# ML Analizini çalıştırın
 python dünya_su_kalitesi_tahmini.py
+```
 
-# Arayüzü başlatın
-cd dashboard && npm install && npm run dev
+**Frontend Tarafı:**
+```bash
+cd dashboard
+npm install
+npm run dev
 ```
 
 ---
@@ -107,7 +109,10 @@ cd dashboard && npm install && npm run dev
 Yazılım Mühendisliği Öğrencisi  
 Samsun Üniversitesi  
 - 📧 [musulesra25@gmail.com](mailto:musulesra25@gmail.com)
-- 💼 [LinkedIn Profiliniz](https://www.linkedin.com/in/esra-musul-970789294/)
+- 💼 [LinkedIn Profilim](https://www.linkedin.com/in/esra-musul-970789294/)
 
 ---
-*Bu proje, uçtan uca yazılım ve veri mühendisliği becerilerini sergilemek amacıyla hazırlanmıştır.*
+
+### 🚀 Gelecek Planları
+Projeyi daha da ileri taşımak adına ilerleyen süreçte *XGBoost/LightGBM* gibi farklı algoritmalarla model performansını iyileştirmeyi ve kurduğum bu ML hattını bir **FastAPI / Flask** backend'i ile dışa açarak (Deployment) tam zamanlı API desteği sağlamayı hedefliyorum.
+
