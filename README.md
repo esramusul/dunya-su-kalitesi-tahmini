@@ -8,6 +8,13 @@
 ### 🚀 Proje Özeti
 AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin eden tam yığın (full-stack) bir veri bilimi projesidir. Veri analizi için Python tabanlı bir modelleme mimarisi kurarken, sonuçları ve tahminleri son kullanıcıyla buluşturmak için React tabanlı interaktif bir kontrol paneli (dashboard) sunar.
 
+## 🎓 Proje Hakkında
+Bu proje, makine öğrenmesi alanında öğrenme sürecimin bir parçası olarak geliştirilmiş başlangıç seviyesinde bir uygulamadır. Amaç; veri analizi, veri ön işleme, model eğitimi ve sonuçların görselleştirilmesi gibi temel makine öğrenmesi adımlarını uçtan uca uygulamalı olarak deneyimlemektir.
+
+Proje kapsamında su kalitesi veri seti kullanılarak suyun içilebilir olup olmadığı tahmin edilmeye çalışılmıştır. Bu süreçte veri analizi, model eğitimi ve sonuçların görselleştirilmesi gibi temel veri bilimi adımları uygulanmıştır.
+
+Bu çalışma aynı zamanda makine öğrenmesi projeleri geliştirme sürecine bir başlangıç niteliğindedir ve ilerleyen aşamalarda daha gelişmiş modeller, farklı veri setleri ve daha kapsamlı uygulamalar ile genişletilebilir.
+
 ### 🛠️ Sergilenen Yetkinlikler
 - **Makine Öğrenmesi Mühendisliği**: Random Forest, Decision Tree, Hiperparametre Optimizasyonu.
 - **Veri Analizi**: Keşifsel Veri Analizi (EDA), İstatistiksel Tamamlama, Veri Ölçeklendirme.
