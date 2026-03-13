@@ -22,11 +22,11 @@ AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin etmek için
 Buraya projeyi en iyi anlatan görselleri (geliştirme aşamasında aldığınız screenshot'ları) ekleyebilirsiniz.
 
 **Dashboard Arayüzü**
-> `![Dashboard Arayüzü](dashboard_screenshot.png)`
+![Dashboard Arayüzü](dashboard_screenshot.png)
 *(Arayüzün genel görünümünü ve kullanıcı dostu yapısını gösteren bir görsel)*
 
 **Model Sonuçları ve Grafikler**
-> `![Model Sonuç Grafiği](confusion_matrix.png)`
+![Model Sonuç Grafiği](confusion_matrix.png)
 *(Modelin sınıflandırma performansını gösteren Hata Matrisi)*
 
 ---
@@ -58,7 +58,8 @@ Bu proje, kimyasal parametreleri kullanarak içilebilir su kaynaklarını belirl
     - **Karmaşıklık Matrisi (Confusion Matrix)**: Modelin öne çıkan özelliği, içilemez (potability=0) sınıfını çok yüksek bir isabetle tahmin etmesidir. Bu durum, içilemez bir suyun yanlışlıkla içilebilir olarak işaretlenmesini önleyerek halk sağlığı risklerini minimize eder.
 
 > **Not:** Aşağıda Random Forest modeline ait Karmaşıklık Matrisi (Confusion Matrix) sonuçlarını görebilirsiniz:
-> `![Confusion Matrix Görseli](confusion_matrix.png)`
+
+![Confusion Matrix Görseli](confusion_matrix.png)
 
 ## 🖥️ Panel Genel Bakış
 Kontrol paneli, yüksek taranabilirlik ve profesyonel sunum için tasarlanmıştır:
@@ -96,9 +97,7 @@ pip install pandas numpy scikit-learn seaborn plotly missingno
 python dünya_su_kalitesi_tahmini.py
 
 # Arayüzü başlatın
-cd dashboard
-npm install
-npm run dev
+cd dashboard && npm install && npm run dev
 ```
 
 ---
