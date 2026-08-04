@@ -1,116 +1,64 @@
-# 💧 AquaGuard AI — Water Potability Prediction System
+# 🚀 global-water-quality-prediction
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
-[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react)](https://react.dev/)
-[![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-
-### 🚀 Proje Özeti
-AquaGuard AI, suyun içilebilirliğini makine öğrenmesi ile tahmin eden tam yığın (full-stack) bir veri bilimi projesidir. Veri analizi için Python tabanlı bir modelleme mimarisi kurarken, sonuçları ve tahminleri son kullanıcıyla buluşturmak için React tabanlı interaktif bir kontrol paneli (dashboard) sunar.
-
-## 🎓 Proje Hakkında
-Bu proje, makine öğrenmesi alanında öğrenme sürecimin bir parçası olarak geliştirilmiş başlangıç seviyesinde bir uygulamadır. Amaç; veri analizi, veri ön işleme, model eğitimi ve sonuçların görselleştirilmesi gibi temel makine öğrenmesi adımlarını uçtan uca uygulamalı olarak deneyimlemektir.
-
-Proje kapsamında su kalitesi veri seti kullanılarak suyun içilebilir olup olmadığı tahmin edilmeye çalışılmıştır. Bu süreçte veri analizi, model eğitimi ve sonuçların görselleştirilmesi gibi temel veri bilimi adımları uygulanmıştır.
-
-Bu çalışma aynı zamanda makine öğrenmesi projeleri geliştirme sürecine bir başlangıç niteliğindedir ve ilerleyen aşamalarda daha gelişmiş modeller, farklı veri setleri ve daha kapsamlı uygulamalar ile genişletilebilir.
-
-### 🛠️ Sergilenen Yetkinlikler
-- **Makine Öğrenmesi Mühendisliği**: Random Forest, Decision Tree, Hiperparametre Optimizasyonu.
-- **Veri Analizi**: Keşifsel Veri Analizi (EDA), İstatistiksel Tamamlama, Veri Ölçeklendirme.
-- **Frontend Geliştirme**: React (Vite), Tailwind CSS, Responsive Kullanıcı Arayüzü Tasarımı.
-- **Veri Görselleştirme**: Recharts ve Plotly ile dinamik grafikler.
-- **UI/UX & Animasyon**: Framer Motion ve Lucide Icons ile akıcı geçişler.
+Makine öğrenmesi öğrenme sürecinde geliştirilen, su kalitesi verileri ile içilebilirlik tahmini yapan bir veri analizi ve ML projesi.
 
 ---
 
-## 📸 Ekran Görüntüleri
+## 📌 Project Overview
 
-Aşağıda projenin hem kullanıcı arayüzünü hem de model performansını gösteren örnek görselleri inceleyebilirsiniz:
-
-**Dashboard Arayüzü**
-![Dashboard Arayüzü](dashboard_screenshot.png)
-*(Arayüzün genel görünümünü ve kullanıcı dostu yapısını gösteren bir görsel)*
+- **Developer:** [esramusul](https://github.com/esramusul)
+- **Tech Stack:** `HTML`
+- **Primary Language:** `HTML`
+- **Created Date:** 2026-03-11
+- **Default Branch:** `main`
+- **License:** Not specified
 
 ---
 
-## 🎯 Projeye Genel Bakış
-Bu proje, kimyasal parametreleri kullanarak içilebilir su kaynaklarını belirleme zorluğunu çözmeyi amaçlamaktadır. Karmaşık veri modelleri ile son kullanıcı erişilebilirliği arasındaki boşluğu doldurarak, kullanıcıların makine öğrenmesi modeliyle doğrudan etkileşime girebileceği görsel bir platform sunar.
+## 📁 Repository Structure
 
-## ✨ Temel Özellikler
-- **Yüksek Performanslı Modeller**: Maksimum performans için `RandomizedSearchCV` kullanılarak optimize edilmiş sınıflandırıcılar.
-- **Etkileşimli Yapay Zeka Simülatörü**: Kullanıcıların kimyasal değerleri manipüle ederek model kararlarını anlık olarak gözlemleyebildiği tahmin modülü.
-- **Teknik Analizler**: Parametrelerin (pH, Sülfat vb.) tahmin üzerindeki etkisini ve veri seti dağılımlarını gösteren görsel sunumlar.
-- **Duyarlı Mimari**: Hız ve netlik için optimize edilmiş mobil öncelikli kontrol paneli.
-
-## 💻 Teknoloji Yığını
-- **Diller**: Python (Çekirdek Mantık), JavaScript (Frontend).
-- **ML ve Veri**: Scikit-learn, Pandas, NumPy, Missingno.
-- **Görselleştirme**: Seaborn, Matplotlib, Recharts, Plotly.
-- **Frontend**: React 18, Vite, Tailwind CSS, Framer Motion.
-
-## 📊 Makine Öğrenmesi Modeli ve Sonuçlar
-1.  **Keşifsel Veri Analizi (EDA)**: 3.276 su örneği genelindeki kalıplar ve kayıp veri trendleri belirlendi.
-2.  **Ön İşleme**: Eksik değerler için istatistiksel ortalama ataması ve özellik normalizasyonu için Min-Max ölçeklendirme uygulandı.
-3.  **Model Seçimi (Neden Random Forest?)**: Doğrusal olmayan karmaşık ilişkileri yakalayabilmesi, aşırı öğrenmeye (overfitting) karşı direnci ve özellik önem sıralamasını (feature importance) net bir şekilde verebilmesi nedeniyle ana model olarak **Random Forest** tercih edilmiştir. Diğer algoritmalarla kıyaslandığında bu veri setinde en tutarlı ve sağlam sonuçları vermiştir.
-4.  **Model Optimizasyonu**: `RepeatedStratifiedKFold` kullanılarak çapraz doğrulama yapılmış ve `RandomizedSearchCV` ile en iyi hiperparametreler elde edilmiştir.
-5.  **Performans Sonuçları**: En iyi performans gösteren Random Forest modeli test kümesinde şu temel metrikleri sağlamıştır:
-    - **Accuracy (Doğruluk)**: ~%82
-    - **Precision (Kesinlik)**: ~%85 *(İçilebilir olarak tahmin edilen suların gerçekten içilebilir olma oranı)*
-    - **Recall (Duyarlılık)**: ~%63 *(Gerçekte içilebilir olan suların model tarafından doğru bulunma oranı)*
-    - **Karmaşıklık Matrisi (Confusion Matrix)**: Modelin öne çıkan özelliği, içilemez (potability=0) sınıfını çok yüksek bir isabetle tahmin etmesidir. Bu durum, içilemez bir suyun yanlışlıkla içilebilir olarak işaretlenmesini önleyerek halk sağlığı risklerini minimize eder.
-
-> **Not:** Aşağıda Random Forest modeline ait Karmaşıklık Matrisi (Confusion Matrix) sonuçlarını görebilirsiniz:
-
-![Confusion Matrix Görseli](confusion_matrix.png)
-
-## 🖥️ Panel Genel Bakış
-Kontrol paneli, yüksek taranabilirlik ve profesyonel sunum için tasarlanmıştır:
-- **Karar Metrikleri**: Hangi kimyasal faktörlerin modelin tahmininde ne kadar ağırlıklı olduğunu görselleştirir.
-- **Tahmin Merkezi**: WHO su kalitesi standartlarına dayalı parametre testi için özelleştirilmiş bir bölüm.
-
-## 📂 Proje Yapısı
 ```text
-├── dashboard/                   # React Frontend (Vite + Tailwind)
-│   ├── src/                     # Frontend Kaynak Kodları
-│   │   ├── assets/              # Statik medya, görseller ve ikonlar
-│   │   ├── App.jsx              # Ana React bileşeni ve arayüz yapısı
-│   │   ├── App.css              # Uygulama bazlı genel stiller
-│   │   ├── main.jsx             # React DOM giriş noktası
-│   │   └── index.css            # Tailwind direktifleri ve global CSS
-│   └── package.json             # Frontend bağımlılıkları ve yapılandırmalar
-├── dünya_su_kalitesi_tahmini.py # ML Kodları (Veri İşleme, Model Eğitimi, Analiz)
-├── Potability_Pie_Chart.html    # Model sonuçlarına ait etkileşimli grafik çıktısı
-├── water_potability.csv         # Model İçin Kullanılan Ham Veri Seti
-└── README.md                    # Proje Dökümantasyonu
-```
-
-## ⚙️ Kurulum
-### Gereksinimler
-- Python 3.8+
-- Node.js ve npm
-
-### Kurulum Adımları
-
-**ML Tarafı:**
-```bash
-pip install pandas numpy scikit-learn seaborn plotly missingno
-python dünya_su_kalitesi_tahmini.py
-```
-
-**Frontend Tarafı:**
-```bash
-cd dashboard
-npm install
-npm run dev
+global-water-quality-prediction/
+├── Potability_Pie_Chart.html
+├── README.md
+├── confusion_matrix.png
+├── dashboard
+├── dashboard_screenshot.png
+├── dünya_su_kalitesi_tahmini.py
+├── water_potability.csv
 ```
 
 ---
 
-### ✍️ Yazar
-**Esra Musul**  
-Yazılım Mühendisliği Öğrencisi  
-Samsun Üniversitesi  
-- 📧 [musulesra25@gmail.com](mailto:musulesra25@gmail.com)
-- 💼 [LinkedIn Profilim](https://www.linkedin.com/in/esra-musul-970789294/)
+## ⚙️ Getting Started
 
+### 1. Clone the Repository
+```bash
+git clone https://github.com/esramusul/global-water-quality-prediction.git
+cd global-water-quality-prediction
+```
+
+### 2. Install Dependencies
+```bash
+Install dependencies using your project package manager.
+```
+
+### 3. Run the Project
+```bash
+Run the main entry point file of the application.
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'feat: Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+*Automatically generated and maintained with [GitHub Smart README Updater](https://github.com/).*
